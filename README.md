@@ -17,9 +17,6 @@ It wraps up messages sending from Apify GitHub workflows into Slack.
 
 ## Usage
 
-For message:
-![Slack message](./msg-example.png)
-
 ```yaml
 name: pre deploy message
 
@@ -77,6 +74,9 @@ jobs:
               slack-channel: C01LBJK4FHA
               version-tag: v0.416.0
 ```
+
+### Message
+![Slack message](./msg-example.png)
 
 # TBD
 
