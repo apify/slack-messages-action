@@ -1,0 +1,22 @@
+name: 'Apify Slack messenger'
+description: 'Used to send slack messages from github workflows'
+author: 'Apify'
+inputs:
+    slack-bot-user-oauth-access-token:
+        required: false
+        description: 'Slack bot token'
+    slack-channel:
+        required: false
+        description: 'Slack channel to post message'
+    apify-environment:
+        required: false
+        description: 'Apify environment'
+    message-type:
+        required: true
+        description: 'Type of message to send'
+    version-tag:
+        required: true
+        description: 'Type of message to send'
+runs:
+    using: 'node12'
+    main: 'dist/index.js'
