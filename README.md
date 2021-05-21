@@ -12,6 +12,7 @@ Wraps up messages sending from Apify GitHub workflows into Slack.
 | `color`                                   | Color of message                                                                  |                                                   `#0066ff` |       no |
 | `message-type`                            | Message type from prepared messages                                               |                                                `pre-deploy` |  yes [1] |
 | `version-tag`                             | Version tag                                                                       |                                                    `v1.0.0` |       no |
+
 [1] If you need to specify message or message-type.
 
 ## Usage
