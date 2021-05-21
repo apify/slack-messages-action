@@ -1,4 +1,4 @@
-# Apify Slack Messenger
+# Apify Slack messages action
 
 Wraps up messages sending from Apify GitHub workflows into Slack.
 
