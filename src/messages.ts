@@ -2,7 +2,7 @@ import { ChatPostMessageArguments } from '@slack/web-api';
 
 const { env } = process;
 
-const getBaseMessage = (slackChannel: string, versionTag: string, message: string, color: string) => ({
+export const getBaseMessage = (slackChannel: string, versionTag: string, message = 'No message set', color = '#0066ff') => ({
     channel: slackChannel,
     text: message,
     attachments: [

@@ -43,10 +43,21 @@ async function run() {
         const token = core.getInput('slack-bot-user-oauth-access-token');
         const slackChannel = core.getInput('slack-channel') || process.env.SLACK_CHANNEL || '';
         const messageType = core.getInput('message-type');
+        const message = core.getInput('message');
+        const color = core.getInput('color');
         const versionTag = core.getInput('version-tag');
         const slackClient = new web_api_1.WebClient(token);
-        const message = messages_1.getMessage({ type: messageType, versionTag, slackChannel });
-        const res = await slackClient.chat.postMessage(message);
+        let slackMessage;
+        if (messageType) {
+            slackMessage = messages_1.getMessage({ type: messageType, versionTag, slackChannel });
+        }
+        else if (message) {
+            slackMessage = messages_1.getBaseMessage(slackChannel, versionTag, message, color);
+        }
+        else {
+            throw new Error('Slack message or message type must be set.');
+        }
+        const res = await slackClient.chat.postMessage(slackMessage);
         core.setOutput('messageId', res.ts);
     }
     catch (error) {
@@ -64,9 +75,9 @@ run();
 "use strict";
 
 Object.defineProperty(exports, "__esModule", ({ value: true }));
-exports.getMessage = void 0;
+exports.getMessage = exports.getBaseMessage = void 0;
 const { env } = process;
-const getBaseMessage = (slackChannel, versionTag, message, color) => ({
+const getBaseMessage = (slackChannel, versionTag, message = 'No message set', color = '#0066ff') => ({
     channel: slackChannel,
     text: message,
     attachments: [
@@ -98,6 +109,7 @@ const getBaseMessage = (slackChannel, versionTag, message, color) => ({
         },
     ],
 });
+exports.getBaseMessage = getBaseMessage;
 const getMessage = ({ type, versionTag, slackChannel, }) => {
     let color;
     let message;
@@ -125,7 +137,7 @@ const getMessage = ({ type, versionTag, slackChannel, }) => {
         default:
             throw new Error(`There is no message with ${type} type.`);
     }
-    return getBaseMessage(slackChannel, versionTag, message, color);
+    return exports.getBaseMessage(slackChannel, versionTag, message, color);
 };
 exports.getMessage = getMessage;
 

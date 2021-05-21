@@ -1,8 +1,8 @@
 {
-    "name": "typescript-action",
+    "name": "slack-messages-action",
     "version": "0.0.0",
     "private": true,
-    "description": "TypeScript template action",
+    "description": "Slack messages action",
     "main": "lib/main.js",
     "scripts": {
         "build": "tsc",
@@ -11,14 +11,10 @@
         "package": "ncc build --source-map",
         "all": "npm run build && npm run lint && npm run package"
     },
-    "repository": {
-        "type": "git",
-        "url": "git+https://github.com/actions/typescript-action.git"
-    },
     "keywords": [
         "actions",
         "node",
-        "setup"
+        "slack"
     ],
     "author": "",
     "license": "MIT",

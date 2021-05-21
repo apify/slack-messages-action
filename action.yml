@@ -8,15 +8,18 @@ inputs:
     slack-channel:
         required: false
         description: 'Slack channel to post message'
-    apify-environment:
-        required: false
-        description: 'Apify environment'
     message-type:
-        required: true
+        required: false
         description: 'Type of message to send'
+    message:
+        required: false
+        description: 'Text of message'
+    color:
+        required: false
+        description: 'Color of message'
     version-tag:
-        required: true
-        description: 'Type of message to send'
+        required: false
+        description: 'Version tag'
 runs:
     using: 'node12'
     main: 'dist/index.js'
