@@ -31,11 +31,11 @@ jobs:
         needs:
           - tag
         steps:
-          - name: clone pull-request-toolkit-action
+          - name: clone slack-messages-action
             uses: actions/checkout@v2
             with:
-              repository: apify/pull-request-toolkit-action
-              ref: refs/tags/v1.0.0
+              repository: apify/slack-messages-action
+              ref: refs/tags/v1.0.2
               path: ./.github/actions/slack-messenger
     
           - name: pre deploy message
@@ -61,11 +61,11 @@ jobs:
         needs:
           - tag
         steps:
-          - name: clone pull-request-toolkit-action
+          - name: clone slack-messages-action
             uses: actions/checkout@v2
             with:
-              repository: apify/pull-request-toolkit-action
-              ref: refs/tags/v1.0.0
+              repository: apify/slack-messages-action
+              ref: refs/tags/v1.0.2
               path: ./.github/actions/slack-messenger
     
           - name: pre deploy message
