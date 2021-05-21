@@ -1,6 +1,6 @@
 # Apify Slack messages action
 
-Wraps up messages sending from Apify GitHub workflows into Slack.
+It wraps up messages sending from Apify GitHub workflows into Slack.
 
 # Action input
 
