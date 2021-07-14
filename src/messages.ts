@@ -22,7 +22,7 @@ export const getBaseMessage = (slackChannel: string, versionTag: string, message
                         },
                         {
                             type: 'mrkdwn',
-                            text: `*Details:*\nhttps://github.com/apify/apify-core/actions/runs/${env.GITHUB_RUN_ID}`,
+                            text: `*Details:*\nhttps://github.com/${env.GITHUB_REPOSITORY}/actions/runs/${env.GITHUB_RUN_ID}`,
                         },
                         {
                             type: 'mrkdwn',
