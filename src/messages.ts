@@ -63,6 +63,14 @@ export const getMessage = ({
             color = '#ff0000';
             message = ':exclamation: *Integration tests failed!*';
             break;
+        case 'cypress-tests-passed':
+            color = '#00cc00';
+            message = ':white_check_mark: *Cypress tests passed*';
+            break;
+        case 'cypress-tests-failed':
+            color = '#ff0000';
+            message = ':exclamation: *Cypress tests failed!*';
+            break;
         default:
             throw new Error(`There is no message with ${type} type.`);
     }
