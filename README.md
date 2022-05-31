@@ -33,7 +33,7 @@ jobs:
             uses: actions/checkout@v2
             with:
               repository: apify/slack-messages-action
-              ref: refs/tags/v1.0.2
+              ref: refs/tags/v1.0.3
               path: ./.github/actions/slack-messenger
     
           - name: pre deploy message
@@ -63,7 +63,7 @@ jobs:
             uses: actions/checkout@v2
             with:
               repository: apify/slack-messages-action
-              ref: refs/tags/v1.0.2
+              ref: refs/tags/v1.0.3
               path: ./.github/actions/slack-messenger
     
           - name: pre deploy message
