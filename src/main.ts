@@ -25,7 +25,7 @@ async function run(): Promise<void> {
 
         core.setOutput('messageId', res.ts);
     } catch (error) {
-        core.setFailed(error.message);
+        core.setFailed((error as Error).message);
     }
 }
 
